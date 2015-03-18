@@ -1,7 +1,7 @@
 # npc
 此框架基于Netty5、spring4.1.0、avro1.7.7，目前只实现了socket通信；
 项目结构说明：
-libs为项目依赖包，其它包结构如下所示：
+libs为项目依赖包，其它包结构如下所示：      
  src         
  src/common        
  src/serialize        
