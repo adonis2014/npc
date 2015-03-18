@@ -1,0 +1,19 @@
+{
+  	"protocol": "Service1",
+  	"namespace": "code.core.npc.test",
+	"types":[],
+  	"messages": {
+    	"getTest": {
+         	"request": [{"name": "str", "type": "string"}],
+         	"response": "string"
+     	},
+     	"getVoid": {
+         	"request": [{"name": "str", "type": "string"}],
+         	"response": "null"
+     	},
+     	"getNoArg": {
+     	    "request":[],
+         	"response": "string"
+     	}
+  	}
+}

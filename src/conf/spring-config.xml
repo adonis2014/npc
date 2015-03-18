@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd 
+		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+
+	<context:annotation-config/>
+	<context:component-scan base-package="code.core"/>
+	<bean id="nettyServer" class="code.core.npc.rpc.netty.server.NettyServerStart" init-method="start">
+		<property name="serviceNames">
+			<list>
+				<value>helloWorld</value>
+				<value>helloWorld2</value>
+			</list>
+		</property>
+		<property name="services">
+			<list>
+				<ref bean="service1"/>
+				<ref bean="service2"/>
+			</list>
+		</property>
+		<property name="ifaces">
+			<list>
+				<value>code.core.npc.test.Service1</value>
+				<value>code.core.npc.test.Service1</value>
+			</list>
+		</property>
+		<property name="corePoolSize" value="20"></property>
+		<property name="maximumPoolSize" value="1000"></property>
+		<property name="keepAliveTime" value="300"></property>
+		<property name="listenPort" value="8080"></property>
+	</bean>
+</beans>
